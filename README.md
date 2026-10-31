@@ -1,0 +1,57 @@
+# ⚖️ Visual Law AI Creator
+
+Este projeto é uma ferramenta avançada desenvolvida em **PHP** e **Modern JavaScript** integrada ao **Ollama** que extrai dados estruturados de petições jurídicas brutas (em formato PDF ou TXT) e renderiza documentos interativos e dinâmicos baseados nas melhores práticas de **Visual Law**.
+
+---
+
+## 🛠️ Nova Arquitetura Estável
+
+A nova arquitetura elimina completamente o envio e a geração de código HTML/CSS pelo modelo de linguagem. O LLM é utilizado **exclusivamente** para processar e compreender o texto jurídico, respondendo em formato JSON estrito.
+
+```
+Entrada (PDF/TXT)
+      ↓
+Petição (Texto Bruto)
+      ↓
+Ollama (LLM Local)
+      ↓
+JSON Estruturado
+      ↓
+PHP (api_visual.php - Validação e Sanitização)
+      ↓
+JavaScript (renderer.js - Compilação Dinâmica)
+      ↓
+HTML Final (template.html + template.css)
+      ↓
+Preview Interativo (Iframe) / Download / Impressão
+```
+
+---
+
+## 📁 Estrutura do Projeto
+
+*   **[`visual_law.php`](file:///g:/Outros%20computadores/MARKED/www/htdocs/visual-law/visual_law.php)**: Interface frontend do usuário. Permite carregar documentos, selecionar modelos, visualizar o preview do Visual Law gerado, inspecionar o código fonte compilado, fazer download ou imprimir.
+*   **[`api_visual.php`](file:///g:/Outros%20computadores/MARKED/www/htdocs/visual-law/api_visual.php)**: Backend PHP que gerencia a comunicação estruturada com o Ollama, valida o JSON de saída de acordo com o esquema e preenche valores ausentes ou corrompidos de forma robusta.
+*   **[`renderer.js`](file:///g:/Outros%20computadores/MARKED/www/htdocs/visual-law/renderer.js)**: Mecanismo de compilação dinâmica client-side. Transforma o JSON higienizado em elementos reais do DOM de forma segura.
+*   **[`template.html`](file:///g:/Outros%20computadores/MARKED/www/htdocs/visual-law/template.html)**: Esqueleto estrutural em HTML do Visual Law contendo os placeholders e pontos de inserção dinâmica de dados.
+*   **[`template.css`](file:///g:/Outros%20computadores/MARKED/www/htdocs/visual-law/template.css)**: Folha de estilos independente do documento gerado.
+*   **[`schema.json`](file:///g:/Outros%20computadores/MARKED/www/htdocs/visual-law/schema.json)**: Validador de esquema de dados para alinhar o JSON retornado pela inteligência artificial.
+
+---
+
+## 🚀 Como Executar
+
+Acesse a ferramenta diretamente através do seu servidor local:
+*   URL: `http://localhost/visual-law/visual_law.php`
+
+---
+
+## 🧠 Modelos Recomendados (Ollama)
+
+Os modelos são otimizados localmente utilizando a flag `"num_gpu" => 99` e `"format" => "json"` para garantir respostas estruturadas e extremamente rápidas.
+
+Comandos para instalação via terminal:
+*   `ollama pull llama3.2:3b` (Ideal para máquinas com pouca VRAM)
+*   `ollama pull llama3.1` (Recomendado para melhor precisão e compreensão de textos complexos)
+*   `ollama pull qwen2.5:7b` (Excelente desempenho em formatação e escrita estruturada)
+*   `ollama pull deepseek-r1:8b` (Excelente raciocínio estruturado)

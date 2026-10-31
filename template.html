@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visual Law - Documento Gerado</title>
+    <link rel="stylesheet" href="template.css">
+</head>
+<body>
+    <div class="container">
+        <div class="top-stripe"></div>
+        <div class="header">
+            <div class="court-title" id="header-tribunal">{{header.tribunal}}</div>
+            <div class="action-title" id="header-titulo">{{header.titulo}}</div>
+            <table class="parties-table">
+                <tr>
+                    <td style="width: 48%; margin-right: 4%;">
+                        <div class="party-box">
+                            <div class="party-label">Autor(a)</div>
+                            <div class="party-name" id="autor-nome">{{autor.nome}}</div>
+                            <div class="party-details" id="autor-detalhes">{{autor.detalhes}}</div>
+                        </div>
+                    </td>
+                    <td style="width: 4%;"></td>
+                    <td style="width: 48%;">
+                        <div class="party-box">
+                            <div class="party-label">Réu/Ré (Requerido)</div>
+                            <div class="party-name" id="reu-nome">{{reu.nome}}</div>
+                            <div class="party-details" id="reu-detalhes">{{reu.detalhes}}</div>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <!-- Resumo do Contrato / Caso -->
+        <div class="section-container">
+            <div class="section-header">
+                <div class="section-icon-title">
+                    <span class="section-number">1</span>
+                    <h2 class="section-text-title">Resumo do Caso</h2>
+                </div>
+            </div>
+            <table class="kpi-table">
+                <tr id="kpi-container">
+                    <!-- KPIs will be injected here dynamically by renderer.js -->
+                </tr>
+            </table>
+        </div>
+        <!-- Linha do Tempo -->
+        <div class="section-container">
+            <div class="section-header">
+                <div class="section-icon-title">
+                    <span class="section-number">2</span>
+                    <h2 class="section-text-title">Linha do Tempo dos Fatos</h2>
+                </div>
+            </div>
+            <div class="timeline" id="timeline-container">
+                <!-- Timeline items will be injected here dynamically by renderer.js -->
+            </div>
+        </div>
+
+        <!-- Fundamentos Jurídicos -->
+        <div class="section-container">
+            <div class="section-header">
+                <div class="section-icon-title">
+                    <span class="section-number">3</span>
+                    <h2 class="section-text-title">Fundamentos Jurídicos</h2>
+                </div>
+            </div>
+            <table class="pillars-table">
+                <tr id="pillars-container">
+                    <!-- Pillars will be injected here dynamically by renderer.js -->
+                </tr>
+            </table>
+        </div>
+        <!-- Quadro de Pedidos -->
+        <div class="section-container">
+            <div class="section-header">
+                <div class="section-icon-title">
+                    <span class="section-number">4</span>
+                    <h2 class="section-text-title">Quadro de Pedidos e Liquidação</h2>
+                </div>
+            </div>
+            <table class="requests-table">
+                <thead>
+                    <tr>
+                        <th style="width: 10%;">Item</th>
+                        <th style="width: 65%;">Descrição da Verba Postulada</th>
+                        <th style="width: 25%; text-align: right;">Valor Calculado</th>
+                    </tr>
+                </thead>
+                <tbody id="requests-container">
+                    <!-- Request rows will be injected here dynamically by renderer.js -->
+                </tbody>
+            </table>
+        </div>
+        <!-- Footer / Assinaturas -->
+        <div class="footer">
+            <p>Nestes termos, pede deferimento.</p>
+            <p style="font-size: 13px; color: #64748b; margin-top: 5px;"><span id="footer-cidade">{{footer.cidade}}</span>, <span id="footer-data">{{footer.data}}</span>.</p>
+            <div class="signature-line">
+                <span id="footer-advogado">{{footer.advogado}}</span>
+                <div class="signature-sub">Advogado - OAB/<span id="footer-oab">{{footer.oab}}</span></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

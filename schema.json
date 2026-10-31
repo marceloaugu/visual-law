@@ -1,0 +1,93 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "VisualLawSchema",
+  "type": "object",
+  "properties": {
+    "header": {
+      "type": "object",
+      "properties": {
+        "tribunal": { "type": "string" },
+        "titulo": { "type": "string" }
+      },
+      "required": ["tribunal", "titulo"]
+    },
+    "autor": {
+      "type": "object",
+      "properties": {
+        "nome": { "type": "string" },
+        "detalhes": { "type": "string" }
+      },
+      "required": ["nome", "detalhes"]
+    },
+    "reu": {
+      "type": "object",
+      "properties": {
+        "nome": { "type": "string" },
+        "detalhes": { "type": "string" }
+      },
+      "required": ["nome", "detalhes"]
+    },
+    "kpis": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "label": { "type": "string" },
+          "value": { "type": "string" },
+          "type": { "type": "string", "enum": ["default", "alert", "success"] }
+        },
+        "required": ["label", "value", "type"]
+      }
+    },
+    "timeline": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "data": { "type": "string" },
+          "evento": { "type": "string" },
+          "descricao": { "type": "string" }
+        },
+        "required": ["data", "evento", "descricao"]
+      }
+    },
+    "fundamentos": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "base_legal": { "type": "string" },
+          "tema": { "type": "string" },
+          "descricao": { "type": "string" }
+        },
+        "required": ["base_legal", "tema", "descricao"]
+      }
+    },
+    "pedidos": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "item": { "type": "string" },
+          "descricao": { "type": "string" },
+          "valor": { "type": "string" }
+        },
+        "required": ["item", "descricao", "valor"]
+      }
+    },
+    "footer": {
+      "type": "object",
+      "properties": {
+        "cidade": { "type": "string" },
+        "data": { "type": "string" },
+        "advogado": { "type": "string" },
+        "oab": { "type": "string" }
+      },
+      "required": ["cidade", "data", "advogado", "oab"]
+    },
+    "valor_total": {
+      "type": "string"
+    }
+  },
+  "required": ["header", "autor", "reu", "kpis", "timeline", "fundamentos", "pedidos", "footer"]
+}
