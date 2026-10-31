@@ -2,6 +2,12 @@
 
 Este projeto é uma ferramenta avançada desenvolvida em **PHP** e **Modern JavaScript** integrada ao **Ollama** que extrai dados estruturados de petições jurídicas brutas (em formato PDF ou TXT) e renderiza documentos interativos e dinâmicos baseados nas melhores práticas de **Visual Law**.
 
+## 🎓 Contexto Acadêmico
+
+Este projeto é uma experimentação de uso de LLM local realizada durante aula no **PPGDP** (Programa de Pós-Graduação em Direito e Políticas Públicas da UFG).
+
+No contexto acadêmico do PPGDP, a temática de **Tecnologias, Inovação e Sistema de Justiça** conecta-se diretamente à atuação acadêmica dos professores **Platon Teixeira de Azevedo Neto** (Vice-Coordenador do programa) e **Sílzia Alves Carvalho** (professora colaboradora).
+
 ---
 
 ## 🛠️ Nova Arquitetura Estável
