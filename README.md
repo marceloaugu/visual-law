@@ -6,7 +6,7 @@ Este projeto é uma ferramenta avançada desenvolvida em **PHP** e **Modern Java
 
 Este projeto é uma experimentação de uso de LLM local realizada durante aula no **PPGDP** (Programa de Pós-Graduação em Direito e Políticas Públicas da UFG).
 
-No contexto acadêmico do PPGDP, a temática de **Tecnologias, Inovação e Sistema de Justiça** conecta-se diretamente à atuação acadêmica dos professores **Platon Teixeira de Azevedo Neto** (Vice-Coordenador do programa) e **Sílzia Alves Carvalho** (professora colaboradora).
+A experimentação se insere na temática de **Tecnologias, Inovação e Sistema de Justiça**.
 
 ---
 
