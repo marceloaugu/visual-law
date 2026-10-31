@@ -60,3 +60,9 @@ Comandos para instalação via terminal:
 *   `ollama pull llama3.1` (Recomendado para melhor precisão e compreensão de textos complexos)
 *   `ollama pull qwen2.5:7b` (Excelente desempenho em formatação e escrita estruturada)
 *   `ollama pull deepseek-r1:8b` (Excelente raciocínio estruturado)
+
+---
+
+## 📄 Licença
+
+Distribuído sob a [licença MIT](LICENSE).
