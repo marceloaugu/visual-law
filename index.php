@@ -930,6 +930,9 @@ $template_css = file_get_contents(__DIR__ . '/template.css');
                 showToast("Visual Law gerado com sucesso!", false);
             } catch (err) {
                 console.error("Erro na geração:", err);
+                if (!generatedHTML) {
+                    loadInitialTemplate();
+                }
                 showToast("Ocorreu um erro na geração: " + err.message, true);
             } finally {
                 loadingOverlay.style.display = 'none';
@@ -944,6 +947,16 @@ $template_css = file_get_contents(__DIR__ . '/template.css');
             doc.write(htmlContent);
             doc.close();
         }
+
+        // Carrega o template inicial no preview ao abrir a aplicação
+        function loadInitialTemplate() {
+            const initialHtml = renderVisualLaw({}, templateHtml, templateCss);
+            generatedHTML = initialHtml;
+            updateIframe(initialHtml);
+            codeViewer.value = initialHtml;
+        }
+
+        loadInitialTemplate();
 
         // Troca de Abas
         function switchTab(tab) {

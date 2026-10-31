@@ -30,19 +30,18 @@ Preview Interativo (Iframe) / Download / Impressão
 
 ## 📁 Estrutura do Projeto
 
-*   **[`visual_law.php`](file:///g:/Outros%20computadores/MARKED/www/htdocs/visual-law/visual_law.php)**: Interface frontend do usuário. Permite carregar documentos, selecionar modelos, visualizar o preview do Visual Law gerado, inspecionar o código fonte compilado, fazer download ou imprimir.
-*   **[`api_visual.php`](file:///g:/Outros%20computadores/MARKED/www/htdocs/visual-law/api_visual.php)**: Backend PHP que gerencia a comunicação estruturada com o Ollama, valida o JSON de saída de acordo com o esquema e preenche valores ausentes ou corrompidos de forma robusta.
-*   **[`renderer.js`](file:///g:/Outros%20computadores/MARKED/www/htdocs/visual-law/renderer.js)**: Mecanismo de compilação dinâmica client-side. Transforma o JSON higienizado em elementos reais do DOM de forma segura.
-*   **[`template.html`](file:///g:/Outros%20computadores/MARKED/www/htdocs/visual-law/template.html)**: Esqueleto estrutural em HTML do Visual Law contendo os placeholders e pontos de inserção dinâmica de dados.
-*   **[`template.css`](file:///g:/Outros%20computadores/MARKED/www/htdocs/visual-law/template.css)**: Folha de estilos independente do documento gerado.
-*   **[`schema.json`](file:///g:/Outros%20computadores/MARKED/www/htdocs/visual-law/schema.json)**: Validador de esquema de dados para alinhar o JSON retornado pela inteligência artificial.
+*   **`index.php`**: Interface frontend do usuário. Permite carregar documentos, selecionar modelos, visualizar o preview do Visual Law gerado, inspecionar o código fonte compilado, fazer download ou imprimir.
+*   **`api_visual.php`**: Backend PHP que gerencia a comunicação estruturada com o Ollama, valida o JSON de saída de acordo com o esquema e preenche valores ausentes ou corrompidos de forma robusta.
+*   **`renderer.js`**: Mecanismo de compilação dinâmica client-side. Transforma o JSON higienizado em elementos reais do DOM de forma segura.
+*   **`template.html`**: Esqueleto estrutural em HTML do Visual Law contendo os placeholders e pontos de inserção dinâmica de dados.
+*   **`template.css`**: Folha de estilos independente do documento gerado.
+*   **`schema.json`**: Validador de esquema de dados para alinhar o JSON retornado pela inteligência artificial.
 
 ---
 
 ## 🚀 Como Executar
 
-Acesse a ferramenta diretamente através do seu servidor local:
-*   URL: `http://localhost/visual-law/visual_law.php`
+Configure os arquivos no diretório do seu servidor web com suporte a PHP e acesse a aplicação pelo navegador (ex: `/visual-law/`).
 
 ---
 

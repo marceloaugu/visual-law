@@ -185,25 +185,35 @@ function renderVisualLaw(jsonData, templateHtml, cssContent) {
         requestsContainer.innerHTML = '';
         const pedidos = Array.isArray(jsonData.pedidos) ? jsonData.pedidos : [];
         
-        pedidos.forEach(req => {
+        if (pedidos.length === 0) {
             const tr = doc.createElement('tr');
-
-            const itemTd = doc.createElement('td');
-            itemTd.innerHTML = `<span class="badge-check">✓</span> ${escapeHtml(req.item || '')}`;
-
-            const descTd = doc.createElement('td');
-            descTd.textContent = req.descricao || '';
-
-            const valTd = doc.createElement('td');
-            valTd.style.textAlign = 'right';
-            valTd.style.fontWeight = '600';
-            valTd.textContent = req.valor || '';
-
-            tr.appendChild(itemTd);
-            tr.appendChild(descTd);
-            tr.appendChild(valTd);
+            tr.innerHTML = `
+                <td><span class="badge-check">✓</span> A</td>
+                <td>Pedido principal conforme petição inicial</td>
+                <td style="text-align: right; font-weight: 600;">A apurar</td>
+            `;
             requestsContainer.appendChild(tr);
-        });
+        } else {
+            pedidos.forEach(req => {
+                const tr = doc.createElement('tr');
+
+                const itemTd = doc.createElement('td');
+                itemTd.innerHTML = `<span class="badge-check">✓</span> ${escapeHtml(req.item || '')}`;
+
+                const descTd = doc.createElement('td');
+                descTd.textContent = req.descricao || '';
+
+                const valTd = doc.createElement('td');
+                valTd.style.textAlign = 'right';
+                valTd.style.fontWeight = '600';
+                valTd.textContent = req.valor || '';
+
+                tr.appendChild(itemTd);
+                tr.appendChild(descTd);
+                tr.appendChild(valTd);
+                requestsContainer.appendChild(tr);
+            });
+        }
 
         // Add Total Row
         const totalTr = doc.createElement('tr');
